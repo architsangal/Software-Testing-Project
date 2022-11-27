@@ -564,7 +564,7 @@ public class PizzaParlour {
     }
 
 
-    private static void runApp() {
+    public static int runApp() {
         Menu.setMenu();
         List<Order> orders = new ArrayList<>();
         Scanner orderScanner = new Scanner(System.in);
@@ -644,6 +644,7 @@ public class PizzaParlour {
             System.out.println("Current Orders:");
             System.out.println(orders);
         }
+        return 0;
     }
 
 
