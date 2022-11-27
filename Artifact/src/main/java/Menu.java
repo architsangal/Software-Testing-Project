@@ -15,7 +15,7 @@ public class Menu {
         // CREDIT https://www.journaldev.com/709/java-read-file-line-by-line
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("Menu.txt"));
+            reader = new BufferedReader(new FileReader("src/main/java/Menu.txt"));
             String item = reader.readLine().trim();
             item = reader.readLine().trim(); // Need to skip a line
             while (!item.equals("TOPPINGS")) {
