@@ -14,7 +14,7 @@ class TestRunApp {
 //	@SuppressWarnings("static-access")
 	@Test
 	void testRunApp() {
-		assertEquals(0, PizzaParlour.runApp("6\n"));
+		assertEquals(0, PizzaParlour.runApp("6\n","Menu.txt"));
 	}
 
 }

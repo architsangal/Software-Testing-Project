@@ -12,13 +12,13 @@ public class Menu {
     static private Map<String, Float> prices = new HashMap<>();
 
     // Compressed Node 5
-    static void setMenu(){ // Node 81
+    static void setMenu(String menuName){ // Node 81
         // CREDIT https://www.journaldev.com/709/java-read-file-line-by-line
         BufferedReader reader; // Node 82
         try {
         	
         	// Node 83
-            reader = new BufferedReader(new FileReader("src/main/java/Menu.txt")); // Node 83a
+            reader = new BufferedReader(new FileReader("src/main/java/"+menuName)); // Node 83a
             String item = reader.readLine().trim();// Node 83b
             item = reader.readLine().trim(); // Need to skip a line// Node 83c
             // --------------------------------------------------------
