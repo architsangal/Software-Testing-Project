@@ -114,7 +114,6 @@ public class Menu {
         return result;
     }
 
-    // temp
     private static String displayToppingsMenu() {
         String result = " == TOPPINGS ==============================\n";
         //System.out.println(" == TOPPINGS ==============================");
@@ -134,21 +133,25 @@ public class Menu {
     }
 
     // Compressed Node 12
-    static String getTotal(Order order){
-        double total = 0.0;
-        for (Pizza p: order.getPizzas()){
+    static String getTotal(Order order){ // Node 70
+        double total = 0.0; // Node 71
+        for (Pizza p: order.getPizzas()){ // Node 72
+        	
+        	// Node 73
             String item = p.getType() + " Pizza_" + p.getSize();
             double price = prices.get(item);
-            if (p.getType().equals("Custom")){
-                for (String t: p.getToppings()){
-                    price += prices.get(t);
+            // --------------------------------
+
+            if (p.getType().equals("Custom")){ // Node 74
+                for (String t: p.getToppings()){ // Node 75
+                    price += prices.get(t); // Node 76
                 }
             }
-            total += price * p.getQuantity();
+            total += price * p.getQuantity(); // Node 77
         }
-        for (Drink d: order.getDrinks()){
-            total += prices.get(d.getName()) * d.getQuantity();
+        for (Drink d: order.getDrinks()){ // Node 78
+            total += prices.get(d.getName()) * d.getQuantity(); // Node 79
         }
-        return "Total: $" + Double.toString(total);
+        return "Total: $" + Double.toString(total); // Node 80
     }
 }
