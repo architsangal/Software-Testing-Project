@@ -26,7 +26,7 @@ public class PizzaParlour {
         return isInteger(possiblePosInt) && Integer.valueOf(possiblePosInt) > 0;
     }
 
-
+    // compressed 1006
     static Drink getDrinksLoop(Scanner scanner) {
         Map<String, String> validDrinks = new HashMap<>();
         validDrinks.put("1", "Coke");
@@ -176,7 +176,7 @@ public class PizzaParlour {
         return customerPizza;
     }
 
-
+    // compressed 1008
     private static String[] getAddressAndDelivery(Scanner scanner) {
         String[] addressAndDelivery = new String[2];
         List<String> validDeliveries = new ArrayList<>(Arrays.asList("Pickup", "Delivery", "Uber", "Foodora"));
