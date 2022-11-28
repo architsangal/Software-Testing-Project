@@ -187,6 +187,7 @@ public class PizzaParlour {
         return addressAndDelivery;
     }
 
+    // Compressed Node 9
     static Order createOrder(Scanner newOrderScanner) {
         List<Pizza> pizzas = new ArrayList<>();
         List<Drink> drinks = new ArrayList<>();
@@ -230,7 +231,7 @@ public class PizzaParlour {
         return OrderFactory.getOrder(pizzas, drinks, address, type);
     }
 
-
+    // Compressed 15
     private static int getOrderNumber(List<Order> orders, Scanner scanner) {
         for (Order order : orders) {
             System.out.println(order);
@@ -564,35 +565,45 @@ public class PizzaParlour {
     }
 
 
-    public static int runApp() {
-        Menu.setMenu();
+    // Node 2 compressed
+    public static int runApp() {// Node 4
+        Menu.setMenu(); // Node 5
+        
+        // Node 6
         List<Order> orders = new ArrayList<>();
         Scanner orderScanner = new Scanner(System.in);
         System.out.println("Welcome to 301 Pizza!: ");
         String userInput;
-
+        //--------------------------
+        
         while (true) {
+        	
+        	// Node 7
             System.out.println("What would you like to do? Enter a number for the corresponding option:");
             System.out.println("[(1) Create an Order, (2) Update an Order, (3) Delete an Order, (4) Submit an Order, (5) View Menu, (6) Quit App]");
             userInput = orderScanner.nextLine().trim();
-
+            // ------------------------------------------
+            
+            // Node 8
             if (userInput.equals("1")) { // Create an Order
-                Order newOrder = createOrder(orderScanner);
-                if (newOrder != null) {
-                    orders.add(newOrder);
-                    String total = Menu.getTotal(newOrder);
-                    System.out.println(total);
+                Order newOrder = createOrder(orderScanner); // Node 9
+                if (newOrder != null) { // Node 10
+                    orders.add(newOrder);// Node 11
+                    String total = Menu.getTotal(newOrder);// Node 12
+                    System.out.println(total);// Node 13
                 }
-            } else if (userInput.equals("2")) { // Update an Order
-                int orderToModify = getOrderNumber(orders, orderScanner);
-                if (orderToModify != -1) {
-                    int indexToModify = getOrderIndex(orders, orderToModify);
-                    if (indexToModify != -1) {
+            } else if (userInput.equals("2")) { // Update an Order // Node 14
+                int orderToModify = getOrderNumber(orders, orderScanner); // Node 15
+                if (orderToModify != -1) { // Node 16
+                    int indexToModify = getOrderIndex(orders, orderToModify); // Node 17
+                    if (indexToModify != -1) { // Node 18
+                    	// Node 19
                         Order order = orders.get(indexToModify);
                         Scanner scanner = new Scanner(System.in);
-                        Order newOrder = getUpdatedOrder(order, scanner);
-                        String total = Menu.getTotal(newOrder);
-                        System.out.println(total);
+                        // ----------------------
+                        Order newOrder = getUpdatedOrder(order, scanner); // Node 20 
+                        String total = Menu.getTotal(newOrder); // Node 21
+                        System.out.println(total);// Node 22
                     }
                 }
             } else if (userInput.equals("3")) { // Delete an Order
@@ -648,8 +659,8 @@ public class PizzaParlour {
     }
 
 
-    public static void main(String[] args) {
-        runApp();
-    }
+    public static void main(String[] args) { // Node 1
+        runApp(); // Node 2
+    }// Node 3
 
 }

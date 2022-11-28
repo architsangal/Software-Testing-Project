@@ -11,6 +11,7 @@ public class Menu {
     static private Map<String, String> drinks = new HashMap<>();
     static private Map<String, Float> prices = new HashMap<>();
 
+    // Compressed Node 5
     static void setMenu(){
         // CREDIT https://www.journaldev.com/709/java-read-file-line-by-line
         BufferedReader reader;
@@ -131,6 +132,7 @@ public class Menu {
         return result.toString();
     }
 
+    // Compressed Node 12
     static String getTotal(Order order){
         double total = 0.0;
         for (Pizza p: order.getPizzas()){
