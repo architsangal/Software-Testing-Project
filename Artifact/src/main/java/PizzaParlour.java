@@ -230,11 +230,12 @@ public class PizzaParlour {
                     // -----
                     break label;
                 case "Cancel":
-                    return null; // node 1
+                    return null; // node 1011
             }
-        }
+        
+        } // node 1012
 
-        return OrderFactory.getOrder(pizzas, drinks, address, type);
+        return OrderFactory.getOrder(pizzas, drinks, address, type); // node 1013
     }
 
     // Compressed 15
