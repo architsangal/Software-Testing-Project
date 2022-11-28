@@ -120,25 +120,29 @@ public class PizzaParlour {
         List<String> toppings = new ArrayList<>();
         // --------
         if (type.equals("Custom")) {
+        	// 1025
             String next_topping = "SENTINEL";
-            while (!next_topping.equals("Done")) {
+            while (!next_topping.equals("Done")) { // 1026
+            	
+            	// 1027
                 System.out.println("Pick a topping! [Olives, Tomatoes, Mushrooms, Jalapenos, Chicken, Beef, Pepperoni, Undo, Done, Cancel]");
                 next_topping = scanner.nextLine().trim();
+                // ---
                 if (next_topping.equals("Cancel")) {
-                    return null;
+                    return null; // 1028
                 } else if (next_topping.equals("Done")) {
                     break;
                 } else if (next_topping.equals("Undo")) {
-                    if (toppings.size() > 0) {
-                        toppings.remove(toppings.size() - 1);
+                    if (toppings.size() > 0) { // 1029
+                        toppings.remove(toppings.size() - 1); // 1031
                     }
                 } else if (validToppings.contains(next_topping)) {
                     toppings.add(next_topping);
                 }
             }
-        }
+        } // 1032
 
-        int quantity;
+        int quantity; // 1030
         while (true) {
             System.out.println("How many pizzas do you want? Enter a number > 0 or 'Cancel'");
             userInput = scanner.nextLine().trim();
