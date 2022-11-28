@@ -163,23 +163,23 @@ public class PizzaParlour {
         Pizza customerPizza = null;
         switch (type) {
             case "Pepperoni":
-                customerPizza = PizzaFactory.makePepperoniPizza(size, quantity);
+                customerPizza = PizzaFactory.makePepperoniPizza(size, quantity); // 1038
                 break;
             case "Margherita":
-                customerPizza = PizzaFactory.makeMargheritaPizza(size, quantity);
+                customerPizza = PizzaFactory.makeMargheritaPizza(size, quantity); // 1039
                 break;
             case "Vegetarian":
-                customerPizza = PizzaFactory.makeVegetarianPizza(size, quantity);
+                customerPizza = PizzaFactory.makeVegetarianPizza(size, quantity); // 1040
                 break;
             case "Neapolitan":
-                customerPizza = PizzaFactory.makeNeapolitanPizza(size, quantity);
+                customerPizza = PizzaFactory.makeNeapolitanPizza(size, quantity); // 1041
                 break;
             case "Custom":
-                customerPizza = PizzaFactory.makeCustomPizza(size, quantity, toppings);
+                customerPizza = PizzaFactory.makeCustomPizza(size, quantity, toppings); // 1042
                 break;
         }
 
-        return customerPizza;
+        return customerPizza; // 1043
     }
 
     // compressed 1008
