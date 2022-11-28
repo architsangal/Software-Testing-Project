@@ -11,35 +11,35 @@ class TestRunAppWhileOnceAndTwiceWithOption5 {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuOnce1IF() {
+	void testRunAppMenuOnce1While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuOnce2IF() {
+	void testRunAppMenuOnce2While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nPizzas\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuOnce3IF() {
+	void testRunAppMenuOnce3While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nToppings\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuOnce4IF() {
+	void testRunAppMenuOnce4While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nDrinks\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuTwice1IF() {
+	void testRunAppMenuTwice1While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nFull\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuTwice2IF() {
+	void testRunAppMenuTwice2While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nPizzas\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuTwice3IF() {
+	void testRunAppMenuTwice3While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nToppings\nDone\n6\n","Menu.txt"));
 	}
 	@Test
-	void testRunAppMenuTwice4IF() {
+	void testRunAppMenuTwice4While() {
 		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nDrinks\nDone\n6\n","Menu.txt"));
 	}
 	@Test
