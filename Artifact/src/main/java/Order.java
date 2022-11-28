@@ -1,10 +1,10 @@
 import java.util.List;
 
-public abstract class Order implements Comparable<Order>{
+public abstract class Order{
     private List<Pizza> pizzas;
     private List<Drink> drinks;
     private int orderNum;
-    private static int orderCount = 1;
+    public static int orderCount = 1;
     private String address;
 
     public Order(List<Pizza> pizzas, List<Drink> drinks, String address) { // Node 62
@@ -58,11 +58,5 @@ public abstract class Order implements Comparable<Order>{
 
     void setAddress(String address) {
         this.address = address;
-    }
-
-    @Override
-    public int compareTo(Order arg0) {
-        
-        return 0;
     }
 }

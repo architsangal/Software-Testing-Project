@@ -7,7 +7,7 @@ public abstract class Pizza {
     List<String> toppings = new ArrayList<>();
     private int quantity;
     private int pizzaId;
-    private static int currentId = 1;
+    public static int currentId = 1;
 
     String getType(){
         return type;
