@@ -70,40 +70,55 @@ public class PizzaParlour {
         return new Drink(name, quantity);
     }
 
-
+    
+    // compressed node 1004
     static Pizza getPizzasLoop(Scanner scanner) {
+    	// node 1014
         List<String> validSizes = new ArrayList<>(Arrays.asList("S", "M", "L", "Cancel"));
         List<String> validTypes = new ArrayList<>(Arrays.asList("Pepperoni", "Margherita", "Vegetarian", "Neapolitan", "Custom", "Cancel"));
         List<String> validToppings = new ArrayList<>(Arrays.asList("Olives", "Tomatoes", "Mushrooms", "Jalapenos", "Chicken", "Beef", "Pepperoni", "Undo", "Done", "Cancel"));
         String userInput;
 
         char size;
-        while (true) {
+        // --------
+        
+        while (true) { // node 1015
+        	// node 1016
             System.out.println("What size pizza do you want? Enter one of the following commands:");
             System.out.println("[S, M, L, Cancel]");
             userInput = scanner.nextLine().trim();
+            
             if (userInput.equals("Cancel")) {
-                return null;
+                return null; // node 1017
             } else if (validSizes.contains(userInput)) {
                 break;
             }
-        }
+        } // node 1018
+        
+        // node 1019
         size = userInput.charAt(0);
 
         String type;
-        while (true) {
+        // -----
+        while (true) { // node 1020
+        	
+        	// node 1021
             System.out.println("What type of pizza do you want?");
             System.out.println("[Pepperoni, Margherita, Vegetarian, Neapolitan, Custom, Cancel]");
             userInput = scanner.nextLine().trim();
+            // -------
             if (userInput.equals("Cancel")) {
-                return null;
+                return null; // 1022
             } else if (validTypes.contains(userInput)) {
                 break;
             }
-        }
+        } // 1023
+        
+        // 1024
         type = userInput;
 
         List<String> toppings = new ArrayList<>();
+        // --------
         if (type.equals("Custom")) {
             String next_topping = "SENTINEL";
             while (!next_topping.equals("Done")) {
