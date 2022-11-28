@@ -28,6 +28,7 @@ public class PizzaParlour {
 
     // compressed 1006
     static Drink getDrinksLoop(Scanner scanner) {
+    	// 1044
         Map<String, String> validDrinks = new HashMap<>();
         validDrinks.put("1", "Coke");
         validDrinks.put("2", "Diet Coke");
@@ -39,35 +40,46 @@ public class PizzaParlour {
         validDrinks.put("8", "Juice");
         validDrinks.put("9", "Cancel");
         String userInput;
+        // -------
 
-        while (true) {
+        while (true) { // 1045
+        	
+        	// 1046
             System.out.println("What drink do you want? Enter a number for the corresponding drink:");
             System.out.println("[(1) Coke, (2) Diet Coke, (3) Coke Zero, (4) Pepsi, (5) Diet Pepsi, (6) Dr. Pepper, (7) Water, (8) Juice, (9) Cancel]");
             userInput = scanner.nextLine().trim();
+            // -------
             if (validDrinks.containsKey(userInput)) {
-                if (userInput.equals("9")) {
-                    return null;
+                if (userInput.equals("9")) { // 1047
+                    return null; // 1048
                 }
                 break;
             }
-        }
+        } // 1049
+        
+        // 1050
         String name = validDrinks.get(userInput);
 
         Integer quantity;
-        while (true) {
+        // ----
+        while (true) { // 1051
+        	
+        	// 1052
             System.out.println("How many of this drink do you want?");
             System.out.println("[Enter a number > 0 or type 'Cancel']");
             userInput = scanner.nextLine().trim();
+            // ------
+            
             if (userInput.equals("Cancel")) {
-                return null;
+                return null; // 1053
             }
             else if (isPositiveInteger(userInput)) {
-                quantity = Integer.valueOf(userInput);
+                quantity = Integer.valueOf(userInput); // 1054
                 break;
             }
         }
 
-        return new Drink(name, quantity);
+        return new Drink(name, quantity); // 1055
     }
 
     
