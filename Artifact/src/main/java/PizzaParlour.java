@@ -303,12 +303,16 @@ public class PizzaParlour {
 
     // compressed Node 24
     private static int getOrderIndex(List<Order> orders, int orderNumber) {
+
+        // 1072 to 1076
         for (int i = 0; i < orders.size(); i += 1) {
             if (orders.get(i).getOrderNum() == orderNumber) {
-                return i;
+                return i; // 1075
             }
         }
-        return -1;
+        // -------
+
+        return -1; // 1077
     }
 
 
