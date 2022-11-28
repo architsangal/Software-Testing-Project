@@ -137,21 +137,27 @@ public class PizzaParlour {
                         toppings.remove(toppings.size() - 1); // 1031
                     }
                 } else if (validToppings.contains(next_topping)) {
-                    toppings.add(next_topping);
+                    toppings.add(next_topping); // 1033
                 }
             }
         } // 1032
 
         int quantity; // 1030
-        while (true) {
+        while (true) { // 1034
+        	
+        	// 1035
             System.out.println("How many pizzas do you want? Enter a number > 0 or 'Cancel'");
             userInput = scanner.nextLine().trim();
+            // ----
+            
             if (userInput.equals("Cancel")) {
                 return null;
             } else if (isPositiveInteger(userInput)) {
                 break;
             }
         }
+        
+        // 1037
         quantity = Integer.parseInt(userInput);
 
         Pizza customerPizza = null;
