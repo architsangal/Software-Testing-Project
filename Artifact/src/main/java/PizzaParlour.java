@@ -244,7 +244,7 @@ public class PizzaParlour {
         return Integer.valueOf(userInput);
     }
 
-
+    // compressed Node 24
     private static int getOrderIndex(List<Order> orders, int orderNumber) {
         for (int i = 0; i < orders.size(); i += 1) {
             if (orders.get(i).getOrderNum() == orderNumber) {
@@ -534,7 +534,7 @@ public class PizzaParlour {
         return pizzas;
     }
 
-
+    // Node 20
     static Order getUpdatedOrder(Order order, Scanner scanner) {
         List<Pizza> newPizzas = order.getPizzas();
         List<Drink> newDrinks = order.getDrinks();
@@ -602,16 +602,16 @@ public class PizzaParlour {
                         Scanner scanner = new Scanner(System.in);
                         // ----------------------
                         Order newOrder = getUpdatedOrder(order, scanner); // Node 20 
-                        String total = Menu.getTotal(newOrder); // Node 21
-                        System.out.println(total);// Node 22
+                        String total = Menu.getTotal(newOrder); // Node 12
+                        System.out.println(total);// Node 21
                     }
                 }
-            } else if (userInput.equals("3")) { // Delete an Order
-                int orderToRemove = getOrderNumber(orders, orderScanner);
-                if (orderToRemove != -1) {
-                    int indexToRemove = getOrderIndex(orders, orderToRemove);
-                    if (indexToRemove != -1) {
-                        orders.remove(indexToRemove);
+            } else if (userInput.equals("3")) { // Delete an Order // Node 22
+                int orderToRemove = getOrderNumber(orders, orderScanner); // Node 15
+                if (orderToRemove != -1) { // Node 23
+                    int indexToRemove = getOrderIndex(orders, orderToRemove); // Node 24
+                    if (indexToRemove != -1) { // Node 25
+                        orders.remove(indexToRemove); // Node 26
                     }
                 }
             } else if (userInput.equals("4")) { // Submit an Order
