@@ -189,42 +189,48 @@ public class PizzaParlour {
 
     // Compressed Node 9
     static Order createOrder(Scanner newOrderScanner) {
-        List<Pizza> pizzas = new ArrayList<>();
+        // node 1001
+    	List<Pizza> pizzas = new ArrayList<>();
         List<Drink> drinks = new ArrayList<>();
         String address;
         String type;
 
         String userInput;
-
+        // ----------
+        
         label:
-        while (true) {
+        while (true) { // node 1002
+        	// node 1003
             System.out.println("What would you like to order? Enter one of the following commands:");
             System.out.println("[Pizza, Drink, Checkout, Cancel]");
             userInput = newOrderScanner.nextLine().trim();
-
+            // ------------------------
             switch (userInput) {
                 case "Pizza":
-                    Pizza nextPizza = getPizzasLoop(newOrderScanner);
+                    Pizza nextPizza = getPizzasLoop(newOrderScanner); // node 1004
                     if (nextPizza != null) {
-                        pizzas.add(nextPizza);
+                        pizzas.add(nextPizza); // node 1005
                     }
                     break;
                 case "Drink":
-                    Drink nextDrink = getDrinksLoop(newOrderScanner);
+                    Drink nextDrink = getDrinksLoop(newOrderScanner); // node 1006
                     if (nextDrink != null) {
-                        drinks.add(nextDrink);
+                        drinks.add(nextDrink); // node 1007
                     }
                     break;
                 case "Checkout":
-                    String[] addressAndDelivery = getAddressAndDelivery(newOrderScanner);
+                    String[] addressAndDelivery = getAddressAndDelivery(newOrderScanner); // node 1008
                     if (addressAndDelivery == null) {
-                        return null;
+                        return null; // node 1009
                     }
+                    
+                    // node 1010
                     address = addressAndDelivery[0];
                     type = addressAndDelivery[1];
+                    // -----
                     break label;
                 case "Cancel":
-                    return null;
+                    return null; // node 1
             }
         }
 
