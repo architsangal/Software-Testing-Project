@@ -255,6 +255,7 @@ public class PizzaParlour {
     }
 
 
+    // Compressed 40
     private static String getMenuCommandFromUser(Scanner scanner) {
         System.out.println("Enter one of the following commands:");
         System.out.println("'Full': the full menu");
@@ -266,12 +267,12 @@ public class PizzaParlour {
         return scanner.nextLine().trim();
     }
 
-
+    // Compressed Node 41
     private static String getMenuInfo(String command) {
         return Menu.displayMenu("Menu-" + command);
     }
 
-
+    // Compressed 32
     private static String submitPickup(Order order) {
         String result = "Your order will be available for pickup in 15 to 20 minutes. You are order #";
         result += String.valueOf(order.getOrderNum());
@@ -279,7 +280,7 @@ public class PizzaParlour {
         return result;
     }
 
-
+    // Compressed 33
     static String submitDelivery(Order order) {
         String result = "Your order #" + String.valueOf(order.getOrderNum()) + " will be delivered as soon as possible to: ";
         result += order.getAddress();
@@ -287,7 +288,7 @@ public class PizzaParlour {
         return result;
     }
 
-
+    // Compressed 34
     static String submitUber(Order order) {
         // Stub Called
         // JSONObject orderJson = new JSONObject();
@@ -307,7 +308,7 @@ public class PizzaParlour {
         return "Stub Called";
     }
 
-
+    // Compressed 35
     static String submitFoodora(Order order) {
         // Create comma separated line for each part of delivery details
         String result = "";
@@ -614,48 +615,55 @@ public class PizzaParlour {
                         orders.remove(indexToRemove); // Node 26
                     }
                 }
-            } else if (userInput.equals("4")) { // Submit an Order
-                int orderToSubmit = getOrderNumber(orders, orderScanner);
-                if (orderToSubmit != -1) {
-                    int indexToSubmit = getOrderIndex(orders, orderToSubmit);
-                    if (indexToSubmit != -1) {
+            } else if (userInput.equals("4")) { // Submit an Order // Node 27
+                int orderToSubmit = getOrderNumber(orders, orderScanner); // Node 15
+                if (orderToSubmit != -1) { //  Node 28
+                    int indexToSubmit = getOrderIndex(orders, orderToSubmit); // Node 24
+                    if (indexToSubmit != -1) { // Node 29
+                    	// Node 30
                         Order order = orders.get(indexToSubmit);
                         String type = order.getType();
                         String result = "";
+                        // ------------------------------------------
+                        
+                        // Node 31
                         switch (type) {
                             case "Pickup":
-                                result = submitPickup(order);
+                                result = submitPickup(order); // Node 32
                                 break;
                             case "Delivery":
-                                result = submitDelivery(order);
+                                result = submitDelivery(order); // Node 33
                                 break;
                             case "Uber":
-                                result = submitUber(order);
+                                result = submitUber(order); // Node 34
                                 break;
                             case "Foodora":
-                                result = submitFoodora(order);
+                                result = submitFoodora(order); // Node 35
                                 break;
                         }
+                        // Node 36
                         System.out.println(result);
                         orders.remove(indexToSubmit);
+                        // ---------------------------------
                     }
                 }
-            } else if (userInput.equals("5")) { // View Menu
-                String menuCommand = "";
-                while (!menuCommand.equals("Done")) {
-                    menuCommand = getMenuCommandFromUser(orderScanner);
-                    String menuInfo = getMenuInfo(menuCommand);
-                    System.out.println("RESULT BEGIN\n" + menuInfo + "RESULT END\n");
+            } else if (userInput.equals("5")) { // View Menu // Node 37
+                String menuCommand = ""; // Node 38
+                while (!menuCommand.equals("Done")) { // Node 39
+                    menuCommand = getMenuCommandFromUser(orderScanner); // Node 40
+                    String menuInfo = getMenuInfo(menuCommand); // Node 41
+                    System.out.println("RESULT BEGIN\n" + menuInfo + "RESULT END\n"); // Node 42
                 }
-            } else if (userInput.equals("6")) { // Quit App
-                break;
-            } else {
-                System.out.println("Invalid Command, Try Again.");
+            } else if (userInput.equals("6")) { // Quit App // Node 43
+                break; // Node 44
+            } else { // Node 45
+                System.out.println("Invalid Command, Try Again."); // Node 46
             }
-            System.out.println("Current Orders:");
-            System.out.println(orders);
+//            System.out.println("Current Orders:");
+//            System.out.println(orders);
         }
-        return 0;
+        // TODO return orders
+        return 0;// Node 47
     }
 
 
