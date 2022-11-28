@@ -382,7 +382,8 @@ public class PizzaParlour {
         result += address;
         result += orderDetails;
         result += orderNumber;
-        try (PrintWriter o = new PrintWriter(System.getProperty("user.dir") + "/Result.txt")) {
+        try (PrintWriter o = new PrintWriter("src/main/java/Result.txt")) {
+        // try (PrintWriter o = new PrintWriter(System.getProperty("user.dir") + "/Result.txt")) {
             o.println(result);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
