@@ -196,32 +196,40 @@ public class PizzaParlour {
 
     // compressed 1008
     private static String[] getAddressAndDelivery(Scanner scanner) {
+    	// 1057
         String[] addressAndDelivery = new String[2];
         List<String> validDeliveries = new ArrayList<>(Arrays.asList("Pickup", "Delivery", "Uber", "Foodora"));
         String userInput;
-
-        while (true) {
+        // -------
+        
+        while (true) { // 1058
+        	
+        	// 1059
             System.out.println("What delivery type do you want? Option 2 uses our parlour's own delivery system.");
             System.out.println("[Pickup, Delivery, Uber, Foodora, Cancel]");
             userInput = scanner.nextLine().trim();
+            // ------
+            
             if (userInput.equals("Cancel")) {
-                return null;
+                return null; // 1060
             } else if (validDeliveries.contains(userInput)) {
                 break;
             }
         }
-        addressAndDelivery[1] = userInput;
-
+        addressAndDelivery[1] = userInput; // 1061
+        
         if (!addressAndDelivery[1].equals("Pickup")) {
+        	// 1062
             System.out.println("Please enter your address:");
             userInput = scanner.nextLine().trim();
+            // --------
             if (userInput.equals("Cancel")) {
-                return null;
+                return null; // 1063
             }
-            addressAndDelivery[0] = userInput;
+            addressAndDelivery[0] = userInput; // 1064
         }
 
-        return addressAndDelivery;
+        return addressAndDelivery; // 1065
     }
 
     // Compressed Node 9
@@ -277,25 +285,34 @@ public class PizzaParlour {
 
     // Compressed 15
     private static int getOrderNumber(List<Order> orders, Scanner scanner) {
+    	// 1066 to 1069
         for (Order order : orders) {
-            System.out.println(order);
+            System.out.println(order); /// 1068
         }
+        // ---------
+        
+        // 1070
         System.out.println("Choose an order number or 'Cancel':");
         String userInput = scanner.nextLine().trim();
+        // ------
         if (userInput.equals("Cancel") || !isPositiveInteger(userInput)) {
-            return -1;
+            return -1; // 1071
         }
-        return Integer.valueOf(userInput);
+        return Integer.valueOf(userInput); // 1072
     }
 
     // compressed Node 24
     private static int getOrderIndex(List<Order> orders, int orderNumber) {
+
+        // 1072 to 1076
         for (int i = 0; i < orders.size(); i += 1) {
             if (orders.get(i).getOrderNum() == orderNumber) {
-                return i;
+                return i; // 1075
             }
         }
-        return -1;
+        // -------
+
+        return -1; // 1077
     }
 
 
