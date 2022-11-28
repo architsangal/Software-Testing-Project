@@ -1,6 +1,6 @@
 import java.util.List;
 
-public abstract class Order {
+public abstract class Order implements Comparable<Order>{
     private List<Pizza> pizzas;
     private List<Drink> drinks;
     private int orderNum;
@@ -58,5 +58,11 @@ public abstract class Order {
 
     void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public int compareTo(Order arg0) {
+        
+        return 0;
     }
 }
