@@ -393,6 +393,7 @@ public class PizzaParlour {
 		return result;
 	}
 
+    // compressed node 1085
 	static String getUserAddress(Scanner scanner) {
 		System.out.println("Please enter your address:");
 		return scanner.nextLine().trim();
@@ -429,6 +430,7 @@ public class PizzaParlour {
 		return drink;
 	}
 
+    // compressed node 1084
 	static List<Drink> updateDrinks(List<Drink> drinks, Scanner scanner) {
 		String userInput = "";
 		while (!userInput.equals("4")) {
@@ -461,6 +463,7 @@ public class PizzaParlour {
 		return drinks;
 	}
 
+    // compressed node 1091
 	private static int getPizzaNumber(List<Pizza> pizzas, Scanner scanner) {
 		for (Pizza pizza : pizzas) {
 			System.out.println(pizza);
@@ -473,6 +476,7 @@ public class PizzaParlour {
 		return Integer.valueOf(userInput);
 	}
 
+    // compressed node 1092
 	private static int getPizzaIndex(List<Pizza> pizzas, int pizzaNumber) {
 		for (int i = 0; i < pizzas.size(); i += 1) {
 			if (pizzas.get(i).getPizzaId() == pizzaNumber) {
@@ -482,6 +486,7 @@ public class PizzaParlour {
 		return -1;
 	}
 
+    // compressed node 1099
 	private static Pizza changePizza(Pizza pizza, Scanner scanner) {
 		System.out.println(pizza);
 		List<String> validSizes = new ArrayList<>(Arrays.asList("S", "M", "L"));
@@ -560,36 +565,46 @@ public class PizzaParlour {
 		return customerPizza;
 	}
 
+    // compressed node 1083
 	static List<Pizza> updatePizzas(List<Pizza> pizzas, Scanner scanner) {
-		String userInput = "";
-		while (!userInput.equals("4")) {
+        String userInput = ""; // 1087
+
+		while (!userInput.equals("4")) { // 1088
+            
+            // 1089
 			System.out.println("Enter a number for the corresponding command:");
 			System.out.println("[(1) Add Pizza, (2) Remove Pizza, (3) Change Pizza, (4) Done]");
 			userInput = scanner.nextLine().trim();
-			if (userInput.equals("1")) {
-				Pizza pizza = getPizzasLoop(scanner);
-				pizzas.add(pizza);
-			} else if (userInput.equals("2")) {
-				int pizzaNumber = getPizzaNumber(pizzas, scanner);
+			// ------
+            
+            if (userInput.equals("1")) {
+				Pizza pizza = getPizzasLoop(scanner); // compressed 1004
+				pizzas.add(pizza); // 1090
+			} 
+            
+            else if (userInput.equals("2")) {
+				int pizzaNumber = getPizzaNumber(pizzas, scanner); // 1091
 				if (pizzaNumber != -1) {
-					int pizzaIndex = getPizzaIndex(pizzas, pizzaNumber);
+					int pizzaIndex = getPizzaIndex(pizzas, pizzaNumber); // 1092
 					if (pizzaIndex != -1) {
-						pizzas.remove(pizzaIndex);
+						pizzas.remove(pizzaIndex); // 1093
 					}
-				}
-			} else if (userInput.equals("3")) {
-				int pizzaNumber = getPizzaNumber(pizzas, scanner);
+				} // 1094
+			} // 1095
+            
+            else if (userInput.equals("3")) { 
+				int pizzaNumber = getPizzaNumber(pizzas, scanner); // compressed 1091
 				if (pizzaNumber != -1) {
-					int pizzaIndex = getPizzaIndex(pizzas, pizzaNumber);
+					int pizzaIndex = getPizzaIndex(pizzas, pizzaNumber); // compressed 1092
 					if (pizzaIndex != -1) {
-						Pizza pizza = pizzas.get(pizzaIndex);
-						Pizza newPizza = changePizza(pizza, scanner);
-						pizzas.set(pizzaIndex, newPizza);
+						Pizza pizza = pizzas.get(pizzaIndex); // 1098
+						Pizza newPizza = changePizza(pizza, scanner); // 1099
+						pizzas.set(pizzaIndex, newPizza); // 1100
 					}
-				}
-			}
+				} // 1101
+			} // 1102
 		}
-		return pizzas;
+		return pizzas; // 1103
 	}
 
 	// compressed Node 20
