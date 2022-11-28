@@ -597,34 +597,46 @@ public class PizzaParlour {
         return pizzas;
     }
 
-    // Node 20
+    // compressed Node 20
     static Order getUpdatedOrder(Order order, Scanner scanner) {
+
+        // 1078
         List<Pizza> newPizzas = order.getPizzas();
         List<Drink> newDrinks = order.getDrinks();
         String newAddress = order.getAddress();
         String userInput = "";
+        // -------
 
-        while (!userInput.equals("4")) {
+        while (!userInput.equals("4")) { // 1079
+
+            // 1080
             System.out.println("Enter a number for the corresponding command:");
             System.out.println("[(1) Update Pizzas, (2) Update Drinks, (3) Update Address, (4) Done]");
             userInput = scanner.nextLine().trim();
+            // -----
+
             switch (userInput) {
                 case "1":
-                    newPizzas = updatePizzas(newPizzas, scanner);
+                    newPizzas = updatePizzas(newPizzas, scanner); // 1083
                     break;
                 case "2":
-                    newDrinks = updateDrinks(newDrinks, scanner);
+                    newDrinks = updateDrinks(newDrinks, scanner); // 1084
                     break;
                 case "3":
-                    newAddress = getUserAddress(scanner);
+                    newAddress = getUserAddress(scanner); // 1085
                     break;
             }
-        }
+        } // 1086
 
+        // 1081
         order.setPizzas(newPizzas);
         order.setDrinks(newDrinks);
         order.setAddress(newAddress);
+        // --------
+
+        // 1082
         return order;
+        // -------
     }
 
 
