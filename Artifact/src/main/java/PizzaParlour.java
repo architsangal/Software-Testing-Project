@@ -285,15 +285,20 @@ public class PizzaParlour {
 
     // Compressed 15
     private static int getOrderNumber(List<Order> orders, Scanner scanner) {
+    	// 1066 to 1069
         for (Order order : orders) {
-            System.out.println(order);
+            System.out.println(order); /// 1068
         }
+        // ---------
+        
+        // 1070
         System.out.println("Choose an order number or 'Cancel':");
         String userInput = scanner.nextLine().trim();
+        // ------
         if (userInput.equals("Cancel") || !isPositiveInteger(userInput)) {
-            return -1;
+            return -1; // 1071
         }
-        return Integer.valueOf(userInput);
+        return Integer.valueOf(userInput); // 1072
     }
 
     // compressed Node 24
