@@ -589,12 +589,12 @@ public class PizzaParlour {
 
 
     // Node 2 compressed
-    public static int runApp() {// Node 4
+    public static int runApp(String input) {// Node 4
         Menu.setMenu(); // Node 5
         
         // Node 6
         List<Order> orders = new ArrayList<>();
-        Scanner orderScanner = new Scanner(System.in);
+        Scanner orderScanner = new Scanner(input);
         System.out.println("Welcome to 301 Pizza!: ");
         String userInput;
         //--------------------------
@@ -677,7 +677,7 @@ public class PizzaParlour {
                     System.out.println("RESULT BEGIN\n" + menuInfo + "RESULT END\n"); // Node 42
                 }
             } else if (userInput.equals("6")) { // Quit App // Node 43
-                break; // Node 44
+            	break; // Node 44
             } else { // Node 45
                 System.out.println("Invalid Command, Try Again."); // Node 46
             }
@@ -690,7 +690,7 @@ public class PizzaParlour {
 
 
     public static void main(String[] args) { // Node 1
-        runApp(); // Node 2
+        runApp("6\n"); // Node 2
     }// Node 3
 
 }
