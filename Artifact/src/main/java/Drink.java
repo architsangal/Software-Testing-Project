@@ -2,7 +2,7 @@ public class Drink {
     private String name;
     private int quantity;
     private int drinkNum;
-    private static int drinkCount = 1;
+    public static int drinkCount = 1;
 
     Drink(String name, int quantity) {
         this.name = name;
