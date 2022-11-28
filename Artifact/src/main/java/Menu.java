@@ -12,108 +12,140 @@ public class Menu {
     static private Map<String, Float> prices = new HashMap<>();
 
     // Compressed Node 5
-    static void setMenu(){
+    static void setMenu(){ // Node 81
         // CREDIT https://www.journaldev.com/709/java-read-file-line-by-line
-        BufferedReader reader;
+        BufferedReader reader; // Node 82
         try {
-            reader = new BufferedReader(new FileReader("src/main/java/Menu.txt"));
-            String item = reader.readLine().trim();
-            item = reader.readLine().trim(); // Need to skip a line
-            while (!item.equals("TOPPINGS")) {
+        	
+        	// Node 83
+            reader = new BufferedReader(new FileReader("src/main/java/Menu.txt")); // Node 83a
+            String item = reader.readLine().trim();// Node 83b
+            item = reader.readLine().trim(); // Need to skip a line// Node 83c
+            // --------------------------------------------------------
+            
+            while (!item.equals("TOPPINGS")) { // Node 84
+            	
+            	// Node 85
                 String delims = "[_]";
                 String[] pizzaTokens = item.split(delims);
                 pizzas.put(pizzaTokens[0], pizzaTokens[1]);
                 String[] priceTokens = pizzaTokens[1].split(" ");
                 int index = 0;
                 float price;
-                for (String s : priceTokens) {
-                    index += 1;
+                // ------------------------------------------------------
+                
+                for (String s : priceTokens) { // Node 86
+                    index += 1; // Node 87
                     if (s.equals("S:")) {
+                    	// Node 88
                         price = Float.parseFloat((priceTokens[index].substring(1)));
                         prices.put(pizzaTokens[0]+"_S", price);
+                        // --------------------------------------
                     } else if (s.equals("M:")) {
+                    	// Node 89
                         price = Float.parseFloat((priceTokens[index].substring(1)));
                         prices.put(pizzaTokens[0]+"_M", price);
+                        // --------------------------------------
                     } else if (s.equals("L:")) {
+                    	// Node 90
                         price = Float.parseFloat((priceTokens[index].substring(1)));
                         prices.put(pizzaTokens[0]+"_L", price);
+                        // --------------------------------------
                     }
                 }
-                item = reader.readLine();
+                item = reader.readLine(); // Node 91
             }
-            item = reader.readLine();
-            while (!item.equals("DRINKS")) {
+            item = reader.readLine(); // Node 92
+            while (!item.equals("DRINKS")) { // Node 93
+            	// Node 94
                 String delims = "[_]";
                 String[] toppingTokens = item.split(delims);
                 toppings.put(toppingTokens[0], toppingTokens[1]);
                 String toppingPrice = toppingTokens[1].substring(1);
                 prices.put(toppingTokens[0], Float.parseFloat(toppingPrice));
-                item = reader.readLine();
+                //----------------------------------------------
+                item = reader.readLine(); // Node 95
             }
-            item = reader.readLine();
-            while (item != null) {
+            item = reader.readLine(); // Node 96
+            while (item != null) { // Node 97
+            	
+            	// Node 98
                 String delims = "[_]";
                 String[] drinkTokens = item.split(delims);
                 drinks.put(drinkTokens[0], drinkTokens[1]);
                 String drinkPrice = drinkTokens[1].substring(1);
                 prices.put(drinkTokens[0], Float.parseFloat(drinkPrice));
-                item = reader.readLine();
+                
+                // ------------------------------------
+                item = reader.readLine();// Node 99
             }
-            reader.close();
-        } catch (IOException e) {
+            reader.close();// Node 100
+        } catch (IOException e) { // Node 101
             e.printStackTrace();
         }
+        
+        // Node 102 return;
     }
-
-    static String displayMenu(String userCommand) {
+    
+    // Compressed Node 41
+	static String displayMenu(String userCommand) {
+		// Node 103
         String delims = "[-]";
         String[] commandTokens = userCommand.split(delims);
         String command = commandTokens[1];
         String msg = command + " is not a valid menu item";
-        switch (command) {
+        // ----------------------------------------------------------
+        switch (command) {// Node 104
             case "Full":
-                msg = displayFullMenu();
+                msg = displayFullMenu(); // Node 105
                 break;
             case "Pizzas":
-                msg = displayPizzaMenu();
+                msg = displayPizzaMenu(); // Node 106
                 break;
             case "Toppings":
-                msg = displayToppingsMenu();
+                msg = displayToppingsMenu(); // Node 107
                 break;
             case "Drinks":
-                msg = displayDrinksMenu();
+                msg = displayDrinksMenu(); // Node 108
                 break;
             default:
-                String value = pizzas.get(command);
-                if (value != null) {
+                String value = pizzas.get(command);// Node 109
+                if (value != null) { // Node 110
                     msg = command + " ==> " + value;
                 }
-                value = toppings.get(command);
-                if (value != null) {
+                value = toppings.get(command); // Node 111
+                if (value != null) { // Node 112
                     msg = command + " ==> " + value;
                 }
-                value = drinks.get(command);
-                if (value != null) {
+                value = drinks.get(command); // Node 113
+                if (value != null) { // Node 114
                     msg = command + " ==> " + value;
                 }
                 //System.out.println(msg);
                 break;
         }
-        return msg;
+        return msg; // Node 115
     }
+	
+	// Compressed Node 105
     private static String displayFullMenu(){
-        return displayPizzaMenu() + displayToppingsMenu() + displayDrinksMenu();
+        return displayPizzaMenu() // Node 106
+        		+ displayToppingsMenu() // Node 107 
+        		+ displayDrinksMenu(); // Node 108
+        // Node 109 return;
     }
 
-    private static String displayPizzaMenu() {
-        String result = "== PIZZAS ==============================\n";
+    // Compressed Node 106
+    private static String displayPizzaMenu() { 
+        String result = "== PIZZAS ==============================\n";// Node 116
         //System.out.println("== PIZZAS ==============================");
-        for (String key : pizzas.keySet()){
-            result = String.format("%s%s\n", result, key + " ==> " + pizzas.get(key));
+        for (String key : pizzas.keySet()){ // Node 117
+            result = String.format("%s%s\n", result, key + " ==> " + pizzas.get(key)); // Node 118
         }
-        return result;
+        return result; // Node 119
     }
 
+    // Compressed Node 107
     private static String displayToppingsMenu() {
         String result = " == TOPPINGS ==============================\n";
         //System.out.println(" == TOPPINGS ==============================");
@@ -123,6 +155,7 @@ public class Menu {
         return result;
     }
 
+    // Compressed Node 108
     private static String displayDrinksMenu() {
         StringBuilder result = new StringBuilder("== DRINKS ==============================\n");
         //System.out.println("== DRINKS ==============================");
