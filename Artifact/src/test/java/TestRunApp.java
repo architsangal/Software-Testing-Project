@@ -1,8 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +12,6 @@ class TestRunApp {
 //	@SuppressWarnings("static-access")
 	@Test
 	void testRunApp() {
-		assertEquals(0, PizzaParlour.runApp("6\n","Menu.txt"));
+		assertEquals(new ArrayList<>(), PizzaParlour.runApp("5\nFull\nDone\n6\n","Menu.txt"));
 	}
-
 }

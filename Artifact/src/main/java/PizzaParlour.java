@@ -635,7 +635,7 @@ public class PizzaParlour {
 	}
 
 	// Node 2 compressed
-	public static int runApp(String input, String menuName) {// Node 4
+	public static List<Order> runApp(String input, String menuName) {// Node 4
 		Menu.setMenu(menuName); // Node 5
 
 		// Node 6
@@ -732,7 +732,7 @@ public class PizzaParlour {
 //            System.out.println(orders);
 		}
 		// TODO return orders
-		return 0;// Node 47
+		return orders;// Node 47
 	}
 
 	public static void main(String[] args) { // Node 1
