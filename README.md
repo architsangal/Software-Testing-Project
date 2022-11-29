@@ -37,6 +37,7 @@ Please refer to the screenshots, for the test cases. The test cases focused on p
 
 - Even if either a pizza or a drink was add to the order, the order still checkout, and was proceeded to delivery options.
 - If the order is cancelled, then too the order was checking out, and was proceeded to delivery options.
+- While updating the order, there is a second declaration of Scanner class binded with System.in, this may lead to a potential source of errors. Assuming the previous statement is true, we were able to reach (R) it, identify that there is an infection(I) but propogation was not possible. For that we needed to change, ther code, which defeats the purpose.
 
 ## Observations
 - Menu was following a strict format. If that was generated for program's input from another program, it is still okay. But there was nearly no error handling.
