@@ -98,4 +98,17 @@ class TestRunAppWhileTwiceWithOption1 {
 
 		assertEquals(true, o.toString().equals(orderList.toString()));
 	}
+
+	@Test
+	void testRunAppCreateOrderCancellingWhileChoosingDrinkType() {
+		Order.orderCount = 1;
+		Pizza.currentId = 1;
+		Drink.drinkCount = 1;
+
+		List<Order> orderList = PizzaParlour.runApp("1\nDrink\n9\nCheckout\nDelivery\n309 Pizza Parlour\n6\n","Menu.txt");
+		System.out.println(orderList);
+
+
+		assertEquals(new ArrayList<>(), orderList);
+	}
 }
