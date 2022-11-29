@@ -35,4 +35,29 @@ Our team tried to minimise the test cases to cover the as many prime paths as po
 
 Please refer to the screenshots, for the test cases. The test cases focused on prime path coverage and edge coverage. It is practically not possible to write all the test cases to satisfy the above criteria. So we focus on cases that may help us, in identifying the use cases, with some errors and we were able to achieve it. Following the test cases, that the code was not able to pass-
 
-- 
+- Even if either a pizza or a drink was add to the order, the order still checkout, and was proceeded to delivery options.
+- If the order is cancelled, then too the order was checking out, and was proceeded to delivery options.
+
+## Observations
+- Menu was following a strict format. If that was generated for program's input from another program, it is still okay. But there was nearly no error handling.
+
+## Contributions
+- Aditya Vardhan: 
+	- Drew Control Flow Graphs - Mapping of CFG with nodes in code (50%)
+	- Junit Integration (Maven Project Configuration)
+	- Wrote Test Cases (50%)
+	- Looked for the source Code, 
+	- Wrote Test case for Menu Lack of Error Handling
+	- Tried to understand Licenced "Understand", for control flow graph generation
+	- README and Report  contributions (50%)
+    - Fixed Bug: for the source of Menu.txt
+- Archit Sangal:
+	- Drew Control Flow Graphs - Mapping of CFG with nodes in code (50%)
+	- Wrote Test Cases (50%)
+	- README and Report  contributions (50%)
+	- Modified the code so as to make it testable e.g. prepared CLI user input mocking, parameterizing the file menu input, etc.
+    - Resolved Bugs: Updated code so that it can compile in JDK 17, previously it was in JDK 8.
+    - Resolved Bug: Resolved OS related outdated dependencies.
+    - Created Stub for Uber Module.
+    - Discovered a potential Error handling mismanagement in Menu, modified code so it could be RIP (Reachability, Infection, Propagation).
+    - Came up witha method to denote large CFG with reusable properties, due to functions and object oriented code, Compressed Notation.
